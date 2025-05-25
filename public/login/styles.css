@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('your-bookshelf-image-url.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    text-align: center;
+}
+
+.form-container{
+    border: rgb(190, 190, 190) 1px solid;
+    border-radius: 10px;
+    width: 400px;
+    padding: 20px 30px;
+    margin-top: 20px;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding-top: 30px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    margin: 20px 0;
+}
+
+.have-account {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.forgot-password a,
+.have-account a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.forgot-password a:hover,
+.have-account a:hover {
+    text-decoration: underline;
+}
