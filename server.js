@@ -18,29 +18,27 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views')));
 
-// Redirect root to login page
 app.get('/', (req, res) => {
-  res.redirect('/login.html');
+  res.redirect('/my-library');
 });
 
-// Route to fetch users from Firestore
-app.get('/users', async (req, res) => {
-  const db = admin.firestore();
-
-  try {
-    const snapshot = await db.collection('bookswap-test').get();
-    const data = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    }));
-
-    res.json(data);
-  } catch (error) {
-    res.status(500).send(error);
-  }
+// My Library page
+app.get('/my-library', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'public/user/my-library.html'));
 });
+
+// Available Books page
+app.get('/available-books', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'public/user/available-books.html'));
+});
+
+// Request Book Exchange page
+app.get('/request-exchange', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'public/user/request-exchange.html'));
+});
+
 
 // Start the server
 app.listen(port, () => {
